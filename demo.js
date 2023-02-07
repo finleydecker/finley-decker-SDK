@@ -3,7 +3,7 @@
 // Import the SDK
 const LordOfTheRingsSDK = require('./index');
 // Insert your api key here
-const apiKey = 'xbrK_NYKref0KmoTHm2k';
+const apiKey = '<YOUR_API_KEY>';
 
 // Create an instance of the SDK
 const sdk = new LordOfTheRingsSDK(apiKey);
