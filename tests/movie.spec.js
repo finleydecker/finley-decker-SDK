@@ -1,7 +1,7 @@
 // Import the axios library
 const axios = require('axios');
 // Import the Movie class
-const Movie = require('../src/movie.js');
+const Movie = require('../src/movie');
 // Define the API endpoint base URL
 const API_BASE_URL = 'https://the-one-api.dev/v2/';
 
@@ -60,28 +60,28 @@ describe('Movie', () => {
     it('should return movie quotes for the given id', async () => {
       const mockMovieQuotes = [
         {
-          "id": "5cd95395de30eff6ebccde5c",
-          "quote": "All we have to decide is what to do with the time that is given us.",
-          "author": "Gandalf",
-          "movieId": "5cd95395de30eff6ebccde5c"
+          id: '5cd95395de30eff6ebccde5c',
+          quote: 'All we have to decide is what to do with the time that is given us.',
+          author: 'Gandalf',
+          movieId: '5cd95395de30eff6ebccde5c',
         },
         {
-          "id": "5cd95395de30eff6ebccde5d",
-          "quote": "I will not say: do not weep; for not all tears are an evil.",
-          "author": "Gandalf",
-          "movieId": "5cd95395de30eff6ebccde5c"
-        }
+          id: '5cd95395de30eff6ebccde5d',
+          quote: 'I will not say: do not weep; for not all tears are an evil.',
+          author: 'Gandalf',
+          movieId: '5cd95395de30eff6ebccde5c',
+        },
       ];
 
       axios.get.mockResolvedValue({ data: mockMovieQuotes });
-      
+
       const movieId = '5cd95395de30eff6ebccde5c';
       const result = await movieInstance.getMovieQuotesById(movieId);
 
       expect(axios.get).toHaveBeenCalledWith(`https://the-one-api.dev/v2/movie/${movieId}/quote`);
       expect(result).toEqual(mockMovieQuotes);
     });
-    
+
     it('should throw an error if the request fails', async () => {
       const errorMessage = 'Request failed with status code 404';
       axios.get.mockRejectedValue(new Error(errorMessage));
@@ -93,5 +93,5 @@ describe('Movie', () => {
         expect(error.message).toEqual(errorMessage);
       }
     });
-  })
+  });
 });
