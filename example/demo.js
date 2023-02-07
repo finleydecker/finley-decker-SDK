@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 // Import the SDK
-const LordOfTheRingsSDK = require('./index');
+const LordOfTheRingsSDK = require('../index');
 // Insert your api key here
 const apiKey = '<YOUR_API_KEY>';
 
