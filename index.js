@@ -18,7 +18,7 @@ class LordOfTheRingsSDK {
     })
     this.movieInstance = new Movie(this.axiosInstance);
   }
-
+  // Method to get instance of movie class
   getMovieInstance() {
     return this.movieInstance;
   }
